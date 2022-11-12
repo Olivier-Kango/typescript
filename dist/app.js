@@ -14,12 +14,14 @@
 // }
 const compteur = document.querySelector('#compteur');
 let i = 0;
+const span = compteur === null || compteur === void 0 ? void 0 : compteur.querySelector('span');
 const increment = (e) => {
     e.preventDefault();
     i++;
-    const span = compteur === null || compteur === void 0 ? void 0 : compteur.querySelector('span');
     if (span) {
-        span.innerText = i.toString();
+        localStorage.setItem('span', i.toString());
+        span.innerText = JSON.parse(localStorage.getItem('span') || '{}');
     }
+    console.log(i);
 };
 compteur === null || compteur === void 0 ? void 0 : compteur.addEventListener('click', increment);

@@ -18,14 +18,16 @@ const compteur = document.querySelector('#compteur');
 
 let i = 0;
 
+const span = compteur?.querySelector('span')
+
 const increment = (e: Event) => {
   e.preventDefault();
-  i++;
-
-  const span = compteur?.querySelector('span')
+  i ++
   if (span) {
-    span.innerText = i.toString()
+    localStorage.setItem('span', i.toString());
+    span.innerText = JSON.parse(localStorage.getItem('span') || '{}')
   }
+  console.log(i)
 }
 
 compteur?.addEventListener('click', increment);
