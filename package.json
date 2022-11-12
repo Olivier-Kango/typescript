@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Olivier-Kango/typescript/issues"
   },
-  "homepage": "https://github.com/Olivier-Kango/typescript#readme"
+  "homepage": "https://github.com/Olivier-Kango/typescript#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }
